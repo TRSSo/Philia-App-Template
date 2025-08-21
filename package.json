@@ -1,0 +1,21 @@
+{
+  "name": "philia-template",
+  "version": "0.0.1",
+  "description": "菲莉娅应用端模板",
+  "license": "LGPL-3.0",
+  "author": "TimeRainStarSky",
+  "type": "module",
+  "scripts": {
+    "lint": "biome check --write src",
+    "compile": "rm -rf lib/* && tsc",
+    "minify": "node ../../mod/minify lib",
+    "build": "pnpm lint && pnpm compile && pnpm minify"
+  },
+  "dependencies": {
+    "philia": "workspace:^"
+  },
+  "imports": {
+    "#*": "./lib/*/index.js",
+    "#*.js": "./lib/*.js"
+  }
+}
